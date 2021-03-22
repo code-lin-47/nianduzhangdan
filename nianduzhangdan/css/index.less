@@ -1,0 +1,652 @@
+html{
+    font-size: calc(100vw/7.2);
+}
+*{
+    box-sizing: border-box;
+}
+// 被调用的类
+.war_anime{
+    animation: bj 4.5s linear;
+    animation-fill-mode: forwards;
+}
+.qiu1_anime{
+    animation: rot1 1s linear;
+    animation-fill-mode: forwards;
+}
+.qiu2_anime{
+    animation: fangda 1s linear;
+    animation-fill-mode: forwards;
+}
+.qiu3_anime{
+    animation: rot3 1s linear;
+    animation-fill-mode: forwards;
+}
+// 容器
+.war{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position: 0 100%;
+    // 手机样式
+    .sj{
+        width: 100%;
+        height: 4.65rem;
+        background-image: url(../images/top.png);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 100% 100%;
+        position: absolute;
+        color:#fff;
+        margin-top: 0.2rem;
+        z-index: 101;
+        opacity: 0;
+        // 页面刷新的首页
+        .shouye{
+            overflow: hidden;
+            text-align: center;
+            p{
+                &:nth-child(1){
+                    font-size: 0.4rem;
+                    margin-top: 1.2rem;
+                    margin-bottom: 0.34rem;
+                }
+                &:nth-child(2){
+                    font-size: 1.2rem;
+                    font-family: '黑体';
+                }
+                span{
+                    margin: 0 0.2rem;
+                }
+            }
+        }
+        .xingxi1{
+            display: none;
+            .nian{
+                font-size: 0.4rem;
+                padding: 1rem 0 0 1.4rem;
+            }
+            .top_xx{
+                display: flex;
+                padding-left: 2.02rem;
+                padding-top: 0.28rem;
+                align-items: center;
+                .top_logo{
+                    display: block;
+                    width: 0.76rem;
+                    height: 0.76rem;
+                    margin-right: 0.46rem;
+                    margin-top: 0.08rem;
+                }
+                span{
+                    font-size: 0.24rem;
+                    line-height: 1.5em;
+                }
+            }
+            .jxck{
+                font-size: 0.2rem;
+                text-align: right;
+                margin-top: 0.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        .xingxi2{
+            display: none;
+            p{
+                padding-left: 1.4rem;
+                &:nth-child(1){
+                    font-size:0.3rem;
+                    font-weight: bold;
+                    line-height: 1.5em;
+                    padding-top: 1rem;
+                }
+                &:nth-child(2){
+                    font-size: 0.2rem;
+                    color: #e2f3f8;
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+        .xingxi3{
+            display: none;
+            p{
+                padding-left: 1.4rem;
+                &:nth-child(1){
+                    font-size:0.3rem;
+                    font-weight: bold;
+                    line-height: 1.5em;
+                    padding-top: 1rem;
+                }
+                &:nth-child(2){
+                    font-size: 0.2rem;
+                    color: #e2f3f8;
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+        .xingxi4{
+            position: relative;
+            padding-top: 0.92rem;
+            display: none;
+            p{
+                padding-left: 1.1rem;
+                &:nth-child(1){
+                    font-size: 0.3rem;
+                    line-height: 2em;
+                    span{
+                        font-size: 0.5rem;
+                    }
+                }
+                &:nth-child(2){
+                    font-size: 0.24rem;
+                }
+            }
+            .zaici{
+                font-size: 0.24rem;
+                position: absolute;
+                width: 2.02rem;
+                height: 0.62rem;
+                border: 0.01rem solid #fff;
+                border-radius: 0.31rem;
+                text-align: center;
+                line-height: 0.62rem;
+                padding-left: 0.4rem;
+                background-image: url(../images/ck.png);
+                background-repeat: no-repeat;
+                background-size: 0.26rem;
+                background-position: 0.3rem 50%;
+                right: 0.6rem;
+                top: 0.73rem;
+            }
+        }
+        .xingxi5{
+            position: relative;
+            padding-top: 0.92rem;
+            display: none;
+            p{
+                padding-left: 1.1rem;
+                &:nth-child(1){
+                    font-size: 0.3rem;
+                    line-height: 1.5em;
+                }
+                &:nth-child(2){
+                    font-size: 0.24rem;
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+    }
+    .up{
+        width: 100%;
+        text-align: center;
+        font-size: 0.4rem;
+        position: absolute;
+        bottom: 4.9rem;
+        line-height: 1.5em;
+        color: #0c8f8d;
+        z-index: 100;
+        opacity: 0;
+    }
+    // 箭头
+    .jiantou{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        bottom: 2.66rem;
+        transform: translate(-50%);
+        z-index: 100;
+        opacity: 0;
+        img{
+            display: block;
+            width: 100%;
+            width: 0.64rem;
+            opacity: 0;
+            margin: 0 auto;
+        }
+        
+    }
+    // 阶梯
+    .jieti{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        img{
+            position: absolute;
+        }
+        .tj1{
+            left: 2.59rem;
+            bottom: -0.58rem;
+            width: 2rem;
+            z-index: 99;
+            display: block;
+        }
+        .tj2{
+            width: 1rem;
+            left: 2.6rem;
+            z-index: 98;
+            bottom: -4rem;
+        }
+        .tj3{
+            width: 1rem;
+            left: 2.11rem;
+            z-index: 97;
+            bottom: -4rem;
+        }
+        .tj4{
+            width: 2rem;
+            left: 1.615rem;
+            z-index: 96;
+            bottom: -6rem;  
+        }
+        .tj5{
+            width: 1.76rem;
+            left: 1.37rem;
+            z-index: 95;
+            bottom: -6rem;
+        }
+        .tj6{
+            width: 1.76rem; 
+            left: 0.13rem;
+            z-index: 94;
+            bottom: -6rem;
+        }
+        .tj7{
+            width: 1rem;
+            left: 0.85rem;
+            bottom: -6rem;
+            z-index: 93;
+        }
+        .tj8{
+            width: 1rem;
+            left: 1.34rem;
+            bottom: -6rem;
+            z-index: 92;
+        }
+        .tj9{
+            width: 1.26rem;
+            left: 0.85rem;
+            z-index: 91;
+            bottom: -6rem;
+        }
+        .tj10{
+            width: 1.26rem;
+            left: 1.59rem;
+            bottom: -6rem;
+            z-index: 90;
+        }
+        .tj11{
+            width: 1.26rem;
+            left: 2.33rem;
+            bottom: -6rem;
+            z-index: 89;
+        }
+        .tj12{
+            width: 1.26rem;
+            left: 3.08rem;
+            bottom: -6rem;
+            z-index: 88;
+        }
+        .tj13{
+            width: 1rem;
+            left: 3.82rem;
+            bottom: -6rem;
+            z-index: 87;
+        }
+        .tj14{
+            width: 1rem;
+            left: 4.32rem;
+            bottom: -2rem;
+            z-index: 88;
+        }
+        .tj15{
+            width: 2rem;
+            left: 3.82rem;
+            bottom: -6rem;
+            z-index: 89;
+        }
+        .tj16{
+            width: 1rem;
+            left: 4.31rem;
+            z-index: 90;
+            bottom: -6rem;
+        }
+        .tj17{
+            width: 1rem;
+            left: 4.81rem;
+            z-index: 91;
+            bottom: -6rem;
+        }
+        .tj18{
+            width: 1rem;
+            left: 5.32rem;
+            z-index: 92;
+            bottom: -6rem;
+        }
+        .tj19{
+            width: 0.76rem;
+            left: 5.06rem;
+            bottom: 2.8rem;
+            z-index: 93;
+            bottom: -6rem;
+        }
+        .tj20{
+            width: 1.26rem;
+            left: 4.31rem;
+            bottom: -0.27rem;
+            z-index: 94;
+            bottom: -6rem;
+        }
+        .tj21{
+            width: 1.26rem;
+            left: 3.59rem;
+            bottom: 0.18rem;
+            z-index: 95;
+            bottom: -6rem;
+        }
+        .tj22{
+            width: 1rem;
+            left: 3.1rem;
+            bottom: -1.79rem;
+            z-index: 94;
+            bottom: -6rem;
+        }
+        // 摩天轮
+        .tj23{
+            width:1.63rem;
+            left: 2.08rem;
+            bottom: 0.6rem;
+            z-index: 91;
+            bottom: -6rem;
+        }
+        .tj24{
+            width: 1rem;
+            left: 0.35rem;
+            bottom: 1.88rem;
+            z-index: 90;
+            bottom: -4.4rem;
+        }
+        .tj25{
+            width: 0.68rem;
+            left: 0.55rem;
+            bottom: 5.3rem;
+            z-index: 91;
+            bottom: -1rem;
+        }
+        // 塔
+        .tj26{
+            width: 2.5rem;
+            left: 1.1rem;
+            bottom: 2.13rem;
+            z-index: 87;
+            bottom: -6rem;
+        }
+        .tj27{
+            width: 1rem;
+            left: 4.32rem;
+            bottom: 3.56rem;
+            z-index: 83;
+            bottom: -4rem;
+        }
+        .tj28{
+            width: 0.82rem;
+            left: 4.44rem;
+            bottom: 6.88rem;
+            z-index: 83;
+            bottom: -1.32rem;
+        }
+        // 旗子
+        .tj29{
+            width: 1.5rem;
+            left: 5.58rem;
+            bottom: 1.46rem;
+            z-index: 86;
+            bottom: -7rem;
+        }
+        .tj30{
+            width: 1.26rem;
+            left: 5.81rem;
+            bottom: 0.2rem;
+            z-index: 87;
+            bottom: -5rem;
+        }
+        .tj31{
+            width: 0.6rem;
+            left: 6.05rem;
+            bottom: 4.2rem;
+            z-index: 88;
+            bottom: -1rem;
+        }
+        .tj32{
+            width: 1rem;
+            left:6.56rem ;
+            bottom: -0.45rem;
+            z-index: 89;
+            bottom: -6rem;
+        }
+        // 云
+        .yun{
+            display: block;
+            opacity: 0;
+        }
+        .yun1{
+            width: 100%;
+            bottom: -0.1rem;
+            z-index: 94;
+        }
+        .yun2{
+            width: 100%;
+            bottom: 0;
+            z-index: 83;
+        }
+        .yun3{
+            width: 100%;
+            bottom: 2.99rem;
+            z-index: 82;
+        }
+        // 金字塔
+        .jzt{
+            display: block;
+            width: 100%;
+            bottom: 6.64rem;
+            opacity: 0;
+        }
+        // 鸽子
+        .gz1{
+            width: 0.7rem;
+            left: 3.34rem;
+            bottom:-0.44rem;
+            display: block;
+            z-index: 200;
+        }
+
+        // 红色台阶上的圈
+        .quan1{
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            border: 0.05rem solid rgba(255, 255, 255, 0.3);
+            position: absolute;
+            animation: sf 1s linear infinite;
+            display: none;
+            .quan2{
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 50%;
+                border: 0.07rem solid rgba(255, 255, 255, 0.5);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                .quan3{
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 50%;
+                    border: 0.1rem solid rgba(255, 255, 255, 0.9);
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+        .a{
+            left: 1.25rem;
+            bottom: 3.6rem;
+            z-index: 100;
+            // display: block;
+        }
+        .b{
+            left: 3.73rem;
+            bottom: 5.5rem;
+            z-index: 100;
+        }
+        .c{
+            left: 5.2rem;
+            bottom: 3rem;
+            z-index: 100;
+        }
+        .d{
+            left: 3rem;
+            bottom: 2.6rem;
+            z-index: 100;
+        }
+    }
+    // 球
+    .qiu{
+        position: absolute;
+        display: none;
+        img{
+            position: absolute;
+            width: 0.7rem;
+            top: -0.49rem;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        p{
+            font-size: 0.24rem;
+            position: absolute;
+            width: 1.86rem;
+            height: 0.46rem;
+            border: 0.03rem solid rgba(255, 255, 255, 0.5);
+            border-radius: 0.1rem;
+            text-align: center;
+            line-height: 0.46rem;
+            bottom: 0.19rem;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+    .qiu1{
+        width: 1.65rem;
+        height: 1.64rem;
+        background-image: url(../images/star_box3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: rotate(-90deg);
+        left: 0.43rem;
+        left: -2.03rem;
+        bottom: 4.16rem;
+    }
+    .qiu2{
+        width: 2.1rem;
+        height: 2.08rem;
+        background-image: url(../images/star_box1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        left:50%;
+        top: 3.86rem;
+        transform: translate(-50%) scale(0.1);
+    }
+    .qiu3{
+        width: 1.82rem;
+        height: 1.82rem;
+        background-image: url(../images/star_box2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        right: 0.23rem;
+        right: -1.83rem;
+        bottom: 4.73rem;
+        transform: rotate(90deg);
+    }
+    .bottom{
+        font-size: 0.24rem;
+        color: #000;
+        position: absolute;
+        bottom: 0.6rem;
+        padding: 0 0.7rem;
+        width: 100%;
+        height: 0.6rem;
+        display: none;
+        span{
+            float: left;
+            width: 2rem;
+            height: 0.6rem;
+            border: 0.01rem solid #000;
+            border-radius: 0.3rem;
+            text-align: center;
+            line-height: 0.6rem;
+            &:nth-child(1){
+                left: 0;
+            }
+            &:nth-child(2){
+                right: 0;
+                float:right;
+            }
+        }
+    }
+}
+@keyframes sf{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(0.8);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes bj{
+    0%{
+        background-position: 0 100%;
+    }
+    100%{
+        background-position: 0 0%;
+    }
+}
+@keyframes rot1{
+    0%{
+        transform: rotate(-90deg);
+        left: -2.03rem;
+    }
+    100%{
+        transform: rotate(0);
+        left: 0.43rem;
+    }
+}
+@keyframes fangda{
+    0%{
+        transform: translate(-50%) scale(0.1);
+    }
+    100%{
+        transform: translate(-50%) scale(1);
+    }
+}
+@keyframes rot3{
+    0%{
+        transform: rotate(90deg);
+        right: -1.83rem;
+    }
+    100%{
+        transform: rotate(0);
+        right: 0.23rem;
+    }
+}
